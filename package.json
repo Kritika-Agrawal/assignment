@@ -5,16 +5,17 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --config './webpack.config.js'",
+    "build": "webpack --watch --config './webpack.config.js'",
     "start": "webpack-dev-server --config './webpack.config.js'"
   },
   "author": "Kritika Agrawal",
   "license": "ISC",
   "dependencies": {
     "@material-ui/core": "^3.9.3",
-    "@material-ui/icons": "^4.2.1",
+    "@material-ui/icons": "^3.0.2",
     "react": "^16.4.2",
-    "react-dom": "^16.4.2"
+    "react-dom": "^16.4.2",
+    "react-slick": "^0.24.0"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
