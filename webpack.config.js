@@ -16,7 +16,10 @@ module.exports = {
                     loader: 'babel-loader',
                     options: {
                         presets: ['@babel/preset-env'],
-                        plugins: ['@babel/plugin-proposal-object-rest-spread'],
+                        plugins: [
+                            '@babel/plugin-proposal-object-rest-spread',
+                            '@babel/plugin-proposal-class-properties'
+                        ],
                     }
                 }
             },
@@ -33,6 +36,7 @@ module.exports = {
             app.use('/assets', express.static(path.join(__dirname, 'src', 'assets')))
         },
         contentBase: path.join(__dirname, 'dist'),
+        watchContentBase: true,
     },
     plugins: [
         new HtmlWebpackPlugin({

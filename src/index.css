@@ -23,7 +23,6 @@ body {
     min-height: 56px;
     align-items: center;
     justify-content: center;
-    border: 1px solid grey;
 }
 
 .inner-nav {
@@ -44,8 +43,8 @@ body {
     color: white;
     font-weight: 400;
     padding-top: 12px;
-    padding-left: 20px;
-    padding-right: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
     padding-bottom: 12px;
 }
 
@@ -70,6 +69,43 @@ body {
     color: white;
     font-size: 32px;
 }
+
+.search-input {
+    display: flex;
+    margin-top: 25px;
+}
+
+.search-input-item {
+    padding: 15px;
+    border-right: 1px solid grey;
+}
+
+.search-input-item p {
+    font-weight: 500;
+}
+
+.search-input-item:last-child {
+    padding: 5px;
+    border-right: none;
+}
+
+.datepicker-input input {
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.87);
+}
+
+.custom-select {
+    border: none;
+    outline: none;
+    font-size: 16px;
+    background: none;
+    padding-top: 5px;
+    margin-left: -3px;
+    position: relative;
+    padding-bottom: 5px;
+    font-family: 'Roboto';
+}
+
 
 @media screen and (max-width: 736px) {
     .banner {

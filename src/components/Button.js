@@ -1,8 +1,9 @@
-import Button from '@material-ui/core/Button'
 import { withStyles } from '@material-ui/core/styles'
+import ButtonBase from '@material-ui/core/ButtonBase';
 
 export default withStyles({
     root: {
+      borderRadius: 3,
       boxShadow: 'none',
       textTransform: 'none',
       fontSize: 16,
@@ -39,4 +40,4 @@ export default withStyles({
         boxShadow: '0 0 0 0.2rem rgba(0,123,255,.5)',
       },
     },
-  })(Button);
+  })(ButtonBase);
