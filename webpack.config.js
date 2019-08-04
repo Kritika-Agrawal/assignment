@@ -1,4 +1,5 @@
 const path = require('path')
+const express = require('express')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
@@ -28,6 +29,9 @@ module.exports = {
     devServer: {
         port: 9000,
         compress: true,
+        before: (app) => {
+            app.use('/assets', express.static(path.join(__dirname, 'src', 'assets')))
+        },
         contentBase: path.join(__dirname, 'dist'),
     },
     plugins: [

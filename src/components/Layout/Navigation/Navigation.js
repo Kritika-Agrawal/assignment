@@ -8,7 +8,7 @@ export default class Navigation extends Component {
             <div className="navigation">
                 <div className="inner-nav">
                     <div className="logo">
-                        chia travel
+                        <img src="/assets/logo.png" />
                     </div>
                     <div className="nav-items active">Home</div>
                     <div className="nav-items">Destinations</div>
