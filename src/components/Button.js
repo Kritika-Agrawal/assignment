@@ -36,6 +36,11 @@ export default withStyles({
         backgroundColor: '#0062cc',
         borderColor: '#005cbf',
       },
+      '&:disabled' :{
+        backgroundColor: 'orangered',
+        borderColor: '#orangered',
+        opacity: 0.7,
+      },
       '&:focus': {
         boxShadow: '0 0 0 0.2rem rgba(0,123,255,.5)',
       },

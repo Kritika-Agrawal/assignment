@@ -6,8 +6,9 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
+import Fab from '@material-ui/core/Fab';
 import { withStyles } from '@material-ui/core/styles'
+import CustomButton from './Button'
 import PropTypes from 'prop-types';
 
 const style = {
@@ -50,7 +51,20 @@ class AccomodationCard extends Component{
     }
 
     render(){
-        let { classes, data : { id, title, cityName, area, rate } } = this.props
+        let { classes, data : { id, title, cityName, area, rate }, favAccoms } = this.props
+        let fabStyleSelected = {
+            position: 'absolute',
+            top: '180px',
+            left: '200px',
+            color: 'orangered',
+        }
+        let fabStyle = {
+            position: 'absolute',
+            top: '180px',
+            left: '200px',
+            color: '#FFFFFF',
+        }
+
         return(
             <Card 
                 classes = {{
@@ -58,7 +72,7 @@ class AccomodationCard extends Component{
                 }}
             >
                 <CardMedia
-                    image="/resources/images/hotel.jpeg"
+                    image="/assets/hotel.jpeg"
                     classes = {{
                         root : classes.cardMedia
                     }}
@@ -79,7 +93,7 @@ class AccomodationCard extends Component{
                             subheader : classes.subheader
                         }}
                     />
-                    <div style = {{ display : 'flex', flexDirection : 'row', justifyContent : 'space-between'}}> 
+                    <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', 'alignItems': 'center'}}> 
                         <div>
                             <Typography component="p" variant="overline">
                                 From
@@ -89,15 +103,20 @@ class AccomodationCard extends Component{
                             </Typography>
                         </div>
                         <div style = {{ width : '60px'}}>
-                            <Button size={"medium"} style={{ position: 'absolute' }}>View</Button>
+                            <CustomButton>View</CustomButton>
+                            {/* <Button size={"medium"} style={{ position: 'absolute' }}>View</Button> */}
                         </div>
                     </div>
                 </CardContent>
                 <CardActions disableActionSpacing>
-                    <FavoriteIcon onClick={this.addToFavourites.bind(this, id)} style={{
-                        position: 'absolute',
-                        top: '186px',
-                        left: '200px'}}/>
+                    <Fab size = 'small' aria-label="like" classes = {{
+                        root : classes.fabIcon
+                    }}
+                    style={favAccoms.includes(id) ? fabStyleSelected : fabStyle}
+                    onClick = {this.addToFavourites.bind(this, id)}
+                    >
+                        <FavoriteIcon />
+                    </Fab>
                 </CardActions>
             </Card>
         )
@@ -106,11 +125,8 @@ class AccomodationCard extends Component{
 }
 
 AccomodationCard.propTypes = {
-    // title : PropTypes.string,
-    // cityName: PropTypes.string,
-    // area: PropTypes.string,
-    // rate: PropTypes.string
     data: PropTypes.object,
+    favAccoms : PropTypes.array,
     addToFavourites : PropTypes.func
 }
 

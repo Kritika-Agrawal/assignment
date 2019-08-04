@@ -31,6 +31,11 @@ export default class Carousel extends Component{
         }
     }
 
+    componentWillReceiveProps = () => {
+        this.setState({
+            favAccomList: []
+        })
+    }
     addToFavourites = (accomId) => {
         console.log('clciked')
         this.setState((state) => {
@@ -68,7 +73,7 @@ export default class Carousel extends Component{
             ]
         };
         let sliderHtml = data.map((datum) => {
-            return <AccomodationCard key={datum.id} data={datum} addToFavourites = {this.addToFavourites}/>
+            return <AccomodationCard key={datum.id} data={datum} favAccoms = {this.state.favAccomList} addToFavourites = {this.addToFavourites}/>
         })
         return (
             <div className="carousel" style={{ width: '95%', margin: 'auto' }}>
