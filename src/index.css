@@ -41,8 +41,17 @@ body {
 }
 
 .nav-items {
+    color: white;
+    font-weight: 400;
+    padding-top: 12px;
     padding-left: 20px;
     padding-right: 20px;
+    padding-bottom: 12px;
+}
+
+.nav-items.active {
+    padding-top: 16px;
+    border-bottom: 3px solid orangered;
 }
 
 .nav-items:nth-child(2) {
