@@ -1,10 +1,8 @@
 import React, { Component } from 'react'
 import Slider from "react-slick"
-import AccomodationCard from './AccomodationCard'
 import PropTypes from 'prop-types'
-import ChevronRight from '@material-ui/icons/ChevronRight'
-import ChevronLeft from '@material-ui/icons/ChevronLeft'
-import Button from '@material-ui/core/Button';
+
+import AccomodationCard from './AccomodationCard'
 
 const PrevButton = ({ className, style, onClick }) => (
     <button
@@ -47,8 +45,6 @@ export default class Carousel extends Component{
         let settings = {
             infinite: false,
             speed: 300,
-            // slidePerRow : 4,
-            // slidesToShow: 4,
             slidesToScroll: 4,
             prevArrow: <PrevButton />,
             nextArrow: <NextButton />,
@@ -72,14 +68,16 @@ export default class Carousel extends Component{
                 // instead of a settings object
             ]
         };
+
         let sliderHtml = data.map((datum) => {
             return <AccomodationCard key={datum.id} data={datum} favAccoms = {this.state.favAccomList} addToFavourites = {this.addToFavourites}/>
         })
+
         return (
-            <div className="carousel" style={{ width: '95%', margin: 'auto' }}>
-                    <Slider {...settings}>
-                        { sliderHtml }
-                    </Slider>
+            <div className="carousel" style={{ width: 'calc(100% - 60px)', margin: 'auto' }}>
+                <Slider {...settings}>
+                    { sliderHtml }
+                </Slider>
             </div>
         )
     }

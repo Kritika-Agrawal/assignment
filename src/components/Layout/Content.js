@@ -1,9 +1,9 @@
-import React, { Component } from "react"
-import Carousel from '../Carousel'
-import accomodationList from '../../../resources/data/Accomodations'
-import staticContent from '../../../resources/data/static'
-import StaticContent from '../StaticContent'
+import React, { Component, Fragment } from "react"
 import PropTypes from 'prop-types'
+
+import Carousel from '../Carousel'
+import StaticContent from '../StaticContent'
+import staticContent from '../../../resources/data/static'
 
 export default class Content extends Component {
     constructor(props){
@@ -13,10 +13,10 @@ export default class Content extends Component {
     render() {
         let {accomodationList} = this.props
         return(
-            <div className = "content">
-                <StaticContent data = {staticContent}/>
-                <Carousel data = {accomodationList}/>   
-            </div>  
+            <Fragment>
+                <StaticContent data={staticContent}/>
+                <Carousel data={accomodationList}/>   
+            </Fragment>  
         )
     }
 }

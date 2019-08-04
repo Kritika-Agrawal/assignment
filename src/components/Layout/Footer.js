@@ -5,7 +5,7 @@ export default class Footer extends Component {
 
     render() {
         return (
-            <div>
+            <div style={{ width: '100%' }}>
                 Footer
             </div>
         )

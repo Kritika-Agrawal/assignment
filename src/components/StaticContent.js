@@ -1,17 +1,12 @@
 import React, { Component } from 'react'
-import Card from '@material-ui/core/Card';
-import CardHeader from '@material-ui/core/CardHeader';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import PropTypes from 'prop-types';
-import Grid from '@material-ui/core/Grid'
+import Card from '@material-ui/core/Card'
+import CardHeader from '@material-ui/core/CardHeader'
+import CardContent from '@material-ui/core/CardContent'
+import CardMedia from '@material-ui/core/CardMedia'
+import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core/styles'
 
 const styles = {
-    root: {
-        height: "200px",
-        width: "250px"
-    },
     cardContent : {
         textAlign : 'center'
     },
@@ -26,16 +21,9 @@ const styles = {
 let StaticTile = ((props) => {
     let { datum, classes } = props
     return (
-        <Card classes = {{
-            root : classes.root
-        }}>
-            <CardMedia
-                image={datum.imageUrl}
-                title="icon"
-            />
-            <CardContent classes = {{
-                root : classes.cardContent
-            }}>
+        <Card className="card">
+            <CardMedia image={datum.imageUrl} title="icon" />
+            <CardContent classes = {{ root : classes.cardContent }}>
                 <CardHeader
                     classes = {{
                         title : classes.title,
@@ -60,18 +48,12 @@ export default class StaticContent extends Component{
     render(){
         let {data} = this.props
         return(
-            <div className = "static-content">
-                {/* <Grid container justify="center" alignItems="center" spacing = {2} style = {{ width : "80%", margin : "auto"}}> */}
-                {
-                        data.map((datum, index) => {
-                            return (
-                                // <Grid item xs = {12} sm = {12} md = {4}>
-                                    <StaticTile datum={datum} key={index}/>
-                                // </Grid>
-                            )
-                        })
-                }
-                {/* </Grid> */}
+            <div className="content">
+                <div className="static-content">
+                    {data.map((datum, index) =>
+                        <StaticTile datum={datum} key={index}/>
+                    )}
+                </div>
             </div>
         )
     }
