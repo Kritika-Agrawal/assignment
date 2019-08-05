@@ -1,9 +1,8 @@
-import React, { Component } from 'react'
+import React from 'react'
 
 import CustomButton from '../../Button'
 
-export default class Navigation extends Component {
-    render() {
+const Navigation = (props) => {
         return (
             <div className="navigation">
                 <div className="inner-nav">
@@ -20,5 +19,6 @@ export default class Navigation extends Component {
                 </div>
             </div>
         )
-    }
 }
+
+export default Navigation

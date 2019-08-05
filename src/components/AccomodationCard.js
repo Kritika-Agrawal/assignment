@@ -51,7 +51,7 @@ class AccomodationCard extends Component{
     }
 
     render(){
-        let { classes, data : { id, title, cityName, area, rate }, favAccoms } = this.props
+        let { classes, data : { id, imageUrl, title, cityName, area, rate }, favAccoms } = this.props
         let fabStyleSelected = {
             position: 'absolute',
             top: '180px',
@@ -72,7 +72,7 @@ class AccomodationCard extends Component{
                 }}
             >
                 <CardMedia
-                    image="/assets/hotel.jpeg"
+                    image={imageUrl}
                     classes = {{
                         root : classes.cardMedia
                     }}

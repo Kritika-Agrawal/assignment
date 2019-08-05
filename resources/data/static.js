@@ -9,13 +9,13 @@ const staticContent = [
         "id": 2,
         "imageUrl": "",
         "title": "Search for Destinations",
-        "content": "In occaecat cupidatat officia sunt non deserunt ex est dolore."
+        "content": "In occaecat cupidatat officia sunt."
     },
     {
         "id": 3,
         "imageUrl": "",
         "title": "Around the world",
-        "content": "In ad enim incididunt et deserunt anim non commodo minim eiusmod irure dolore."
+        "content": "In ad enim incididunt et deserunt."
     }
 
 ]

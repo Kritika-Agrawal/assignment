@@ -8,14 +8,25 @@ import staticContent from '../../../resources/data/static'
 export default class Content extends Component {
     constructor(props){
         super(props)
+        this.state = {
+            staticContent : []
+        }
+    }
+
+    componentDidMount(){
+        // call api to get static content and set state
+        this.setState({
+            staticContent
+        })
     }
 
     render() {
-        let {accomodationList} = this.props
+        let { accomodationList } = this.props
+        let { staticContent } = this.state
         return(
             <Fragment>
-                <StaticContent data={staticContent}/>
-                <Carousel data={accomodationList}/>   
+                <StaticContent data={ staticContent }/>
+                <Carousel data={ accomodationList }/>   
             </Fragment>  
         )
     }

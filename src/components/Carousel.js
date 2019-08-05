@@ -35,11 +35,11 @@ export default class Carousel extends Component{
         })
     }
     addToFavourites = (accomId) => {
-        console.log('clciked')
         this.setState((state) => {
             return { favAccomList: [...state.favAccomList, accomId] }
         })
     }
+
     render(){
         let { data } = this.props
         let settings = {
@@ -74,7 +74,7 @@ export default class Carousel extends Component{
         })
 
         return (
-            <div className="carousel" style={{ width: 'calc(100% - 60px)', margin: 'auto' }}>
+            <div className="carousel" style={{ width: 'calc(100% - 60px)', margin: 'auto', top : '-50px', position : 'relative' }}>
                 <Slider {...settings}>
                     { sliderHtml }
                 </Slider>

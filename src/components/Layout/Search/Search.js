@@ -48,6 +48,12 @@ const CustomizedInputBase = (props) => {
   );
 }
 
+CustomizedInputBase.propTypes = {
+    disableSearch : PropTypes.bool,
+    checkAvailability : PropTypes.func,
+    onInputSelect : PropTypes.func
+}
+
 export default class Search extends Component {
     constructor(props){
         super(props)
@@ -63,7 +69,6 @@ export default class Search extends Component {
     checkAvailability = () => {
         this.props.setAccomodations(accomodationList)
     }
-
 
     onInputSelect = (prop, value) => {
         this.setState({

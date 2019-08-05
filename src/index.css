@@ -127,7 +127,13 @@ body {
 }
 
 .static-content .card {
-    width: 30vw;
+    width: 15vw;
+    height : 15vw;
+    overflow: hidden;
+}
+
+.static-content .card-content {
+    padding-top : 10px !important;
 }
 
 .static-content .card:nth-child(2) {

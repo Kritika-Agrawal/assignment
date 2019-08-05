@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import Card from '@material-ui/core/Card'
 import CardHeader from '@material-ui/core/CardHeader'
 import CardContent from '@material-ui/core/CardContent'
@@ -11,10 +11,15 @@ const styles = {
         textAlign : 'center'
     },
     title : {
-        fontSize : "1em"
+        fontSize : "0.8em"
     },
     subheaderRoot : {
-        fontSize : "0.8em"
+        fontSize : "0.8em",
+        marginTop : "0.8em"
+    },
+    cardMedia : {
+        height: '100px',
+        width : '15vw'
     }
 }
 
@@ -22,12 +27,15 @@ let StaticTile = ((props) => {
     let { datum, classes } = props
     return (
         <Card className="card">
-            <CardMedia image={datum.imageUrl} title="icon" />
-            <CardContent classes = {{ root : classes.cardContent }}>
+            <CardMedia image={datum.imageUrl} classes = {{
+                root : classes.cardMedia
+            }}
+                title="icon" />
+            <CardContent className = "card-content" classes = {{ root : classes.cardContent }}>
                 <CardHeader
                     classes = {{
                         title : classes.title,
-                        subheader : classes.subheader
+                        subheader: classes.subheaderRoot
                     }}
                     title={datum.title}
                     subheader={datum.content}
@@ -39,7 +47,7 @@ let StaticTile = ((props) => {
 
 StaticTile = withStyles(styles)(StaticTile)
 
-export default class StaticContent extends Component{
+export default class StaticContent extends PureComponent{
 
     constructor(props){
         super(props)
