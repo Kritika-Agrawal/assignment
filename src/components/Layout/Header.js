@@ -23,7 +23,7 @@ export default class Header extends Component {
                         <Navigation />
                     </Grid>
                     <Grid item sm = {12}>
-                    <Search setAccomodations={this.setAccomodations} searchText={homePageContent.searchText} searchBtnText = {homePageContent.searchBtnText}/>
+                        <Search setAccomodations={this.setAccomodations} searchText={homePageContent.searchText} searchBtnText = {homePageContent.searchBtnText}/>
                     </Grid>
                 </Grid>
         )

@@ -29,6 +29,8 @@ body {
     margin-left: 20px;
     margin-right: 20px;
     padding-bottom: 12px;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 .nav-items.active {
@@ -40,10 +42,10 @@ body {
     margin-left: auto;
 }
 
-.nav-items:last-child {
+/* .nav-items:last-child {
     margin-right: 0px;
     padding-right: 0px;
-}
+} */
 
 .search {
     margin-top: 40px;
@@ -53,6 +55,7 @@ body {
 .search .text {
     color: white;
     font-size: 32px;
+    text-align: center;
 }
 
 .search-input {
@@ -85,6 +88,12 @@ body {
     .search-input-item-box{
         border-bottom: 1px solid grey !important;
         border-right: none !important;
+    }
+    .logo{
+        padding: 20px;
+    }
+    .nav-items{
+        font-size: 1em;
     }
 }
 

@@ -46,8 +46,8 @@ class AccomodationCard extends Component{
         super(props)
     }
 
-    addToFavourites = (accomId) => {
-       this.props.addToFavourites(accomId)
+    addToFavourites = () => {
+       this.props.addToFavourites(this.props.data.id)
     }
 
     render(){
@@ -113,7 +113,7 @@ class AccomodationCard extends Component{
                         root : classes.fabIcon
                     }}
                     style={favAccoms.includes(id) ? fabStyleSelected : fabStyle}
-                    onClick = {this.addToFavourites.bind(this, id)}
+                    onClick = {this.addToFavourites}
                     >
                         <FavoriteIcon />
                     </Fab>
