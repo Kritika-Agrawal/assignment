@@ -8,8 +8,8 @@ import App from './App'
 const theme = createMuiTheme()
 
 render(
-    <MuiThemeProvider theme={theme}>
-        <App/>
-    </MuiThemeProvider>,
-    document.getElementById('app')
+  <MuiThemeProvider theme={theme}>
+    <App/>
+  </MuiThemeProvider>,
+  document.getElementById('app')
 )

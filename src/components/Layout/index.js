@@ -1,31 +1,31 @@
-import React, { Component } from "react";
+import React, { Component } from 'react'
 import Header from './Header'
 import Content from './Content'
 
 export default class Layout extends Component{
-    constructor(props){
-        super(props)
-        this.state = {
-            accomodationList : []
-        }
-}
+  constructor(props){
+    super(props)
+    this.state = {
+      accomodationList : []
+    }
+  }
 
     setAccomodations = (data) => {
-        this.setState({
-            accomodationList : data
-        })
+      this.setState({
+        accomodationList : data
+      })
     }
 
     render(){
-        return(
-            <div style={{ width: '100%' }}> 
-                <div className = "banner" style = {{ width : '100%'}}>
-                    <Header setAccomodations={this.setAccomodations}/>
+      return(
+        <div style={{ width: '100%' }}> 
+          <div className = "banner" style = {{ width : '100%' }}>
+            <Header setAccomodations={this.setAccomodations}/>
                     
-                </div>
-                <Content accomodationList={this.state.accomodationList} />
-            </div>
-        )
+          </div>
+          <Content accomodationList={this.state.accomodationList} />
+        </div>
+      )
     }
 
 }
