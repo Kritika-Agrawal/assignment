@@ -50,7 +50,7 @@ const CustomizedInputBase = (props) => {
               <Grid item xs={12} sm={12} md={3} className='search-input-item-box'>
                 <div className="search-input-item btn">
                     <Button disabled={props.disableSearch}style={{ height: '100%', width: '100%', paddingLeft: 25, paddingRight: 25 }} onClick = {props.checkAvailability}>
-                        <RightIcon style={{ fontSize: 32 }} /> CHECK AVAILABILITY
+                        <RightIcon style={{ fontSize: 32 }} /> {(props.searchBtnText).toUpperCase()}
                     </Button>
                 </div>
             </Grid>
@@ -62,7 +62,8 @@ const CustomizedInputBase = (props) => {
 CustomizedInputBase.propTypes = {
     disableSearch : PropTypes.bool,
     checkAvailability : PropTypes.func,
-    onInputSelect : PropTypes.func
+    onInputSelect : PropTypes.func,
+    searchBtnText: PropTypes.string
 }
 
 export default class Search extends Component {
@@ -101,9 +102,9 @@ export default class Search extends Component {
     render() {
         return (
             <div className="search">
-                <div className="text">Book your perfect holiday rental, today</div>
+                <div className="text">{this.props.searchText}</div>
                 <div>
-                    <CustomizedInputBase disableSearch={this.state.disableSearch} checkAvailability={this.checkAvailability} onInputSelect={this.onInputSelect}/>
+                    <CustomizedInputBase searchBtnText={this.props.searchBtnText} disableSearch={this.state.disableSearch} checkAvailability={this.checkAvailability} onInputSelect={this.onInputSelect}/>
                 </div>
             </div>
         )
@@ -111,5 +112,7 @@ export default class Search extends Component {
 }
 
 Search.propTypes = {
-    setAccomodations : PropTypes.func
+    setAccomodations : PropTypes.func,
+    searchText : PropTypes.string,
+    searchBtnText : PropTypes.string
 }

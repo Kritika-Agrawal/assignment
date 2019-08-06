@@ -35,9 +35,18 @@ export default class Carousel extends Component{
         })
     }
     addToFavourites = (accomId) => {
-        this.setState((state) => {
-            return { favAccomList: [...state.favAccomList, accomId] }
-        })
+        if(this.state.favAccomList.includes(accomId)){
+            this.setState((state) => {
+                let newState = state.favAccomList.filter((accom) => {
+                    return accom!=accomId
+                })
+                return { favAccomList: newState }
+            })
+        }else{
+            this.setState((state) => {
+                return { favAccomList: [...state.favAccomList, accomId] }
+            })
+        }
     }
 
     render(){

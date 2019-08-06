@@ -4,7 +4,7 @@ import Grid from '@material-ui/core/Grid'
 import Search from './Search'
 import Navigation from './Navigation'
 import PropTypes from 'prop-types'
-import { callbackify } from "util";
+import { homePageContent } from './../../constants'    
 
 export default class Header extends Component {
     constructor(props){
@@ -23,7 +23,7 @@ export default class Header extends Component {
                         <Navigation />
                     </Grid>
                     <Grid item sm = {12}>
-                        <Search setAccomodations = {this.setAccomodations}/>
+                    <Search setAccomodations={this.setAccomodations} searchText={homePageContent.searchText} searchBtnText = {homePageContent.searchBtnText}/>
                     </Grid>
                 </Grid>
         )

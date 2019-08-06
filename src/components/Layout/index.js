@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import Grid from '@material-ui/core/Grid'
-
 import Header from './Header'
 import Content from './Content'
 
@@ -10,7 +8,7 @@ export default class Layout extends Component{
         this.state = {
             accomodationList : []
         }
-    }
+}
 
     setAccomodations = (data) => {
         this.setState({
