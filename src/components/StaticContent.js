@@ -27,7 +27,7 @@ let StaticTile = ((props) => {
   let { datum, classes } = props
   return (
     <Card className="card">
-      <CardMedia image={datum.imageUrl || "#"} classes = {{
+      <CardMedia image={datum.imageUrl || '#'} classes = {{
         root : classes.cardMedia
       }}
       title="icon" />

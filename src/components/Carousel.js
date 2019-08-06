@@ -4,34 +4,21 @@ import PropTypes from 'prop-types'
 
 import AccomodationCard from './AccomodationCard'
 
-const PrevButton = ({ className, style, onClick }) => (
+const NavButton = ({ className, style, onClick, slickClass, label }) => (
   <button
-    className={[ 'my-class-prev', className ].join(' ')}
+    className={[ slickClass, className ].join(' ')}
     style={{ ...style, backgroundColor: 'orangered' }}
     onClick={onClick}
-    aria-label="Go to previous slide"
+    aria-label={label}
   />
 )
 
-PrevButton.propTypes = {
+NavButton.propTypes = {
   className : PropTypes.string,
   style: PropTypes.object,
   onClick : PropTypes.func,
-}
-
-const NextButton = ({ className, style, onClick }) => (
-  <button
-    className={[ 'my-class-next', className ].join(' ')}
-    style={{ ...style, backgroundColor: 'orangered' }}
-    onClick={onClick}
-    aria-label="Go to next slide"
-  />
-)
-
-NextButton.propTypes = {
-  className: PropTypes.string,
-  style: PropTypes.object,
-  onClick: PropTypes.func,
+  slickClass : PropTypes.string,
+  label : PropTypes.string,
 }
 
 export default class Carousel extends Component{
@@ -65,8 +52,8 @@ export default class Carousel extends Component{
         infinite: false,
         speed: 300,
         slidesToScroll: 4,
-        prevArrow: <PrevButton />,
-        nextArrow: <NextButton />,
+        prevArrow: <NavButton slickClass="my-class-prev" label={'Go to previous slide'}/>,
+        nextArrow: <NavButton slickClass="my-class-next" label={'Go to next slide'}/>,
         responsive: [
           {
             breakpoint: 800,
