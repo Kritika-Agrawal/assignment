@@ -7,7 +7,7 @@ import AccomodationCard from './AccomodationCard'
 const PrevButton = ({ className, style, onClick }) => (
     <button
         className={['my-class-prev', className].join(' ')}
-        style={{ ...style, backgroundColor: 'pink' }}
+        style={{ ...style, backgroundColor: 'orangered' }}
         onClick={onClick}
         aria-label="Go to previous slide"
     />
@@ -15,7 +15,7 @@ const PrevButton = ({ className, style, onClick }) => (
 const NextButton = ({ className, style, onClick }) => (
     <button
         className={['my-class-next', className].join(' ')}
-        style={{ ...style, backgroundColor: 'pink' }}
+        style={{ ...style, backgroundColor: 'orangered' }}
         onClick={onClick}
         aria-label="Go to next slide"
     />

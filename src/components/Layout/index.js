@@ -20,10 +20,13 @@ export default class Layout extends Component{
 
     render(){
         return(
-            <Grid container spacing={0}>
-                <Header setAccomodations={this.setAccomodations}/>
-                <Content accomodationList={this.state.accomodationList}/>
-            </Grid>
+            <div style={{ width: '100%' }}> 
+                <div className = "banner" style = {{ width : '100%'}}>
+                    <Header setAccomodations={this.setAccomodations}/>
+                    
+                </div>
+                <Content accomodationList={this.state.accomodationList} />
+            </div>
         )
     }
 

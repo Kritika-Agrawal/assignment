@@ -6,6 +6,7 @@ import { addDays } from 'date-fns'
 import Button from '../../Button'
 import DateRange from '../../DateRange'
 import Select from '../../Select'
+import Grid from '@material-ui/core/Grid'
 
 import accomodationList from '../../../../resources/data/Accomodations' 
 import PropTypes from 'prop-types'
@@ -25,25 +26,35 @@ const CustomizedInputBase = (props) => {
 
   return (
     <Paper className="search-input">
-        <div className="search-input-item">
-            <p>Where do you want to go?</p>
-            <InputBase
-                style={{ width: 250 }}
-                placeholder="country, ZIP, postal code, city..."
-                inputProps={{ 'aria-label': 'search google maps' }}
-                onChange={onChange.bind(null, 'place')}
-            />
-        </div>
-        <DateRange startLabel={"Check In"} endLabel = {"Check Out"} onChange={onChange} />
-        <div className="search-input-item" style={{ width: 150 }}>
-            <p>Guests</p>
-              <Select options={["1", "2", "3", "3+"]} defaultValue={"Number of Guests"} onChange={onChange.bind(null, 'noOfGuests')}/>
-        </div>
-        <div className="search-input-item">
-              <Button disabled={props.disableSearch}style={{ height: '100%', width: '100%', paddingLeft: 25, paddingRight: 25 }} onClick = {props.checkAvailability}>
-                <RightIcon style={{ fontSize: 32 }} /> CHECK AVAILABILITY
-            </Button>
-        </div>
+        <Grid container>
+              <Grid item className= 'search-input-item-box' xs = {12} sm = {12} md = {3}> 
+                <div className="search-input-item">
+                    <p>Where do you want to go?</p>
+                    <InputBase
+                        style={{ width: 250 }}
+                        placeholder="country, ZIP, postal code, city..."
+                        inputProps={{ 'aria-label': 'search google maps' }}
+                        onChange={onChange.bind(null, 'place')}
+                    />
+                </div>
+            </Grid>
+              <Grid item xs={12} sm={12} md={4} className='search-input-item-box'>
+                <DateRange startLabel={"Check In"} endLabel = {"Check Out"} onChange={onChange} />
+            </Grid>
+              <Grid item xs={12} sm={12} md = {2} className= 'search-input-item-box'>
+                <div className="search-input-item">
+                    <p>Guests</p>
+                    <Select options={["1", "2", "3", "3+"]} defaultValue={"Number of Guests"} onChange={onChange.bind(null, 'noOfGuests')}/>
+                </div>
+            </Grid>
+              <Grid item xs={12} sm={12} md={3} className='search-input-item-box'>
+                <div className="search-input-item btn">
+                    <Button disabled={props.disableSearch}style={{ height: '100%', width: '100%', paddingLeft: 25, paddingRight: 25 }} onClick = {props.checkAvailability}>
+                        <RightIcon style={{ fontSize: 32 }} /> CHECK AVAILABILITY
+                    </Button>
+                </div>
+            </Grid>
+        </Grid>
     </Paper>
   );
 }

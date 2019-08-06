@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import DatePicker from './DatePicker'
 import { addDays, compareAsc } from 'date-fns'
+import Grid from '@material-ui/core/Grid'
 
 import PropTypes from 'prop-types'
 
@@ -51,18 +52,21 @@ export default class DateRange extends Component{
                      break;
             case -1: minDate = addDays(startDate, 1)
         }
-        // let minDate = compareAsc(new Date(), startDate) > 0 ? new Date() : addDays(startDate, 1)
         return(
-            <React.Fragment>
-                <div className="search-input-item" style={{ width: 150 }}>
-                    <p>{startLabel}</p>
-                    <DatePicker value = {startDate} disablePast = {true} onChange = {this.onChange.bind(this, 'startDate')}/>
-                </div>
-                <div className="search-input-item" style={{ width: 150 }}>
-                    <p>{endLabel}</p>
-                    <DatePicker value={endDate} minDate={minDate} onChange={this.onChange.bind(this, 'endDate')}/>
-                </div>
-            </React.Fragment>
+            <Grid container direction = {'row'} style = {{'height' : '100%'}}>
+                <Grid item className='search-input-item-box' xs = {6} sm = {6} md = {6}>
+                    <div className="search-input-item">
+                        <p>{startLabel}</p>
+                        <DatePicker value = {startDate} disablePast = {true} onChange = {this.onChange.bind(this, 'startDate')}/>
+                    </div>
+                </Grid>
+                <Grid item xs={6} sm = {6} md = {6}>
+                    <div className="search-input-item">
+                        <p>{endLabel}</p>
+                        <DatePicker value={endDate} minDate={minDate} onChange={this.onChange.bind(this, 'endDate')}/>
+                    </div>
+                </Grid>
+            </Grid>
 
         )
     }

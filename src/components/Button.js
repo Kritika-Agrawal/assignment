@@ -6,7 +6,7 @@ export default withStyles({
       borderRadius: 3,
       boxShadow: 'none',
       textTransform: 'none',
-      fontSize: 16,
+      fontSize: '1em',
       padding: '6px 12px',
       border: '1px solid',
       lineHeight: 1.5,
